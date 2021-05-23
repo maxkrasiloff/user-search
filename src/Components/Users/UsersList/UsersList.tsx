@@ -2,12 +2,12 @@ import React from 'react';
 import UserListElement from './UsersListElement/UserListElement';
 import css from './UsersList.module.css';
 
-import { AvatarType, UserType } from '../../../api/api';
+import { Avatar, User } from '../../../api/api';
 
 type UsersListPropsType = {
-  users: Array<UserType>;
+  users: Array<User>;
   setSearchValue: CallableFunction,
-  avatars: Array<AvatarType> | any,
+  avatars: Array<Avatar> | any,
 }
 
 const UsersList:React.FC<UsersListPropsType> = ({
@@ -23,7 +23,7 @@ const UsersList:React.FC<UsersListPropsType> = ({
             key={element.id}
             name={element.name}
             username={element.username}
-            avatar={avatars ? (avatars.find((el:AvatarType) => el.id === element.id)) : null}
+            avatar={avatars ? (avatars.find((el:Avatar) => el.id === element.id)) : null}
             setSearchValue={setSearchValue}
           />
         ),

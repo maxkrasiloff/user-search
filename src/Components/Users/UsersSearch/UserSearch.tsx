@@ -2,11 +2,11 @@ import React from 'react';
 import search from '../../../assets/search.svg';
 import css from './UserSearch.module.css';
 
-export type searchValueType = {value:string}
+export type SearchValue = {value:string}
 
 type SearchPropsType = {
   setSearchValue: CallableFunction,
-  searchValue: searchValueType,
+  searchValue: SearchValue,
 }
 
 const UserSearch:React.FC<SearchPropsType> = (

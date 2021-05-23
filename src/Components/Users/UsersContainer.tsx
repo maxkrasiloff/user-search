@@ -1,46 +1,40 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { FunctionComponent, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import Users from './Users';
 import { getUsers, getAvatars, setSearchValue } from '../../redux/usersReducer';
-import { searchValueType } from './UsersSearch/UserSearch';
-import { AvatarType, UserType } from '../../api/api';
+import { SearchValue } from './UsersSearch/UserSearch';
+import { Avatar, User } from '../../api/api';
 
-interface UsersPropsType {
+type UsersProps = {
   users: {
     users:{
-      users: Array<UserType>
+      users: Array<User>
     },
-    avatars: {avatars: Array<AvatarType>},
-    searchValue: searchValueType,
+    avatars: {avatars: Array<Avatar>},
+    searchValue: SearchValue,
   },
   getUsersFunc:CallableFunction,
   getAvatarsFunc:CallableFunction,
   setSearchValueFunc:CallableFunction,
 }
 
-const UsersContainter:FunctionComponent<UsersPropsType> = ({
+const UsersContainter:FunctionComponent<UsersProps> = ({
   users,
   getUsersFunc,
   getAvatarsFunc,
   setSearchValueFunc,
-}:UsersPropsType) => {
-  const [usersIsLoad, setLoadUsers] = useState(false);
-  const [avatarLoading, setLoadingAvatar] = useState(false);
+}:UsersProps) => {
   function setSearchVal(val:string) {
     setSearchValueFunc(val);
+    console.log(val);
     getUsersFunc(val);
   }
-
-  if (!usersIsLoad) {
+  useEffect(() => {
     getUsersFunc();
-    setLoadUsers(true);
-  }
-
-  if (!avatarLoading) {
     getAvatarsFunc();
-    setLoadingAvatar(true);
-  }
+  }, []);
+
   return (
     <Users
       users={users.users.users}
@@ -52,17 +46,17 @@ const UsersContainter:FunctionComponent<UsersPropsType> = ({
   );
 };
 
-type stateType = {
+type State = {
   users: {
     users:{
-      users: Array<UserType>
+      users: Array<User>
     },
-    avatars: {avatars: Array<AvatarType>},
-    searchValue: searchValueType,
+    avatars: {avatars: Array<Avatar>},
+    searchValue: SearchValue,
   }
 }
 
-const mapStateToProps = (state:stateType) => ({
+const mapStateToProps = (state:State) => ({
   users: state.users,
   searchValue: state.users.searchValue,
 });

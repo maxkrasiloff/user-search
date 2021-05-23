@@ -5,7 +5,7 @@ const instance = axios.create({
   withCredentials: true,
 });
 
-export type AvatarType = {
+export type Avatar = {
   id: number,
   albumId:number,
   title:string,
@@ -13,16 +13,16 @@ export type AvatarType = {
   thumbnailUrl:string
 }
 
-export type AvatarArraysType = Array<AvatarType>;
+export type AvatarArraysType = Array<Avatar>;
 
-export type UserType = {
+export type User = {
   id: number,
   name: string,
   username: string,
 }
 
 export const UsersAPI = {
-  getUsers(id = ''):Promise<UserType> {
+  getUsers(id = ''):Promise<User> {
     return instance.get(
       `users/${id}`,
     ).then(

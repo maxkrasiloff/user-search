@@ -1,11 +1,11 @@
 import React from 'react';
 import css from './UsersListElement.module.css';
-import { AvatarType } from '../../../../api/api';
+import { Avatar } from '../../../../api/api';
 
 type UserListElementType = {
   name:string,
   username: string,
-  avatar: AvatarType,
+  avatar: Avatar,
   setSearchValue: CallableFunction,
 }
 

@@ -1,11 +1,11 @@
 import { createAction, createReducer, PayloadAction } from '@reduxjs/toolkit';
-import { UsersAPI, AvatarType, UserType } from '../api/api';
+import { UsersAPI, Avatar, User } from '../api/api';
 import { AppDispatch } from './store';
 
 type initialStateType = {
-  users: Array<UserType>,
+  users: Array<User>,
   searchValue: string,
-  avatars: Array<AvatarType>
+  avatars: Array<Avatar>
 }
 
 const initialState:initialStateType = {
@@ -14,13 +14,13 @@ const initialState:initialStateType = {
   avatars: [],
 };
 
-const setUsers = createAction('SET_USERS', (users:Array<UserType> | null) => ({
+const setUsers = createAction('SET_USERS', (users:Array<User> | null) => ({
   payload: {
     users,
   },
 }));
 
-const setAvatars = createAction('SET_AVATAR', (avatars:Array<AvatarType> | null) => ({
+const setAvatars = createAction('SET_AVATAR', (avatars:Array<Avatar> | null) => ({
   payload: {
     avatars,
   },
@@ -45,7 +45,7 @@ export const getUsers:CallableFunction = (query = '') => (dispatch:AppDispatch) 
   UsersAPI.getUsers().then(
     (users:any) => {
       dispatch(setUsers(users.filter(
-        (el:UserType) => (
+        (el:User) => (
           el.name.toLowerCase().includes(query.toLowerCase())
         ),
       )));
