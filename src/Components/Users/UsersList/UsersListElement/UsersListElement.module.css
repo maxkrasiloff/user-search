@@ -1,0 +1,30 @@
+.userBlock {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: 0.3s;
+  background-color: transparent;
+}
+
+.userBlock:hover {
+  background-color: #F2F2F2;
+  cursor: pointer;
+}
+
+.name {
+  font-size: 14px;
+}
+
+.username {
+  font-size: 12px;
+  color: #98999A
+}
+
+.userAvatar {
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  border-radius: 50%;
+  border: 1px solid #E5E5E6;
+  margin: 8px;
+}

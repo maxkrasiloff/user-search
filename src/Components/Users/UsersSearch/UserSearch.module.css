@@ -1,0 +1,26 @@
+.searchWrapper {
+  display: flex;
+  position: relative;
+  background-color: #F9F9F9;
+  border-bottom: 1px solid #333;
+}
+
+.searchInput {
+  border: 0;
+  background-color: #F9F9F9;
+  width: 100%;
+  padding-left: 15px;
+  padding: 18px 0 18px 56px;
+  font-size: 16px;
+  position: relative;
+  background-color: transparent;
+}
+
+.searchIcon {
+  position: absolute;
+  background-size: contain;
+  width: 18px;
+  height: 18px;
+  left: 18px;
+  top: 17px;
+}

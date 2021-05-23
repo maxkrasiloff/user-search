@@ -1,0 +1,28 @@
+.userBody {
+  width: 360px;
+  margin: 2rem auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 1rem #3333;
+  box-sizing: border-box;
+}
+
+.preloader {
+  width: 100px;
+  height: 100px;
+  background-size: contain;
+  margin: auto auto;
+  animation: rotate 2s linear 0s infinite;
+}
+
+.preloaderWrapper {
+  margin: 2rem 2rem;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  } 
+  to {
+    transform: rotate(360deg) 
+  }  
+}
