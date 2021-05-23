@@ -2,6 +2,7 @@
   "name": "user-search",
   "version": "0.2.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.1",
     "@testing-library/jest-dom": "^5.12.0",
