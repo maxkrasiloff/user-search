@@ -16,3 +16,11 @@
   flex-grow: 1;
   
 }
+
+@media all and (max-width: 760px) {
+  .content {
+    margin: 0;
+    width: 100%;
+    padding: 0;
+  }
+}
