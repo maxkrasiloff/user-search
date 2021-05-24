@@ -4,17 +4,17 @@ import css from './UsersList.module.css';
 
 import { Avatar, User } from '../../../api/api';
 
-type UsersListPropsType = {
+type UsersListProps = {
   users: Array<User>;
   setSearchValue: CallableFunction,
   avatars: Array<Avatar> | any,
 }
 
-const UsersList:React.FC<UsersListPropsType> = ({
+const UsersList:React.FC<UsersListProps> = ({
   users,
   setSearchValue,
   avatars,
-}:UsersListPropsType) => (
+}:UsersListProps) => (
   <>
     <div className={css.usersList}>
       {users && users.map(

@@ -13,7 +13,7 @@ export type Avatar = {
   thumbnailUrl:string
 }
 
-export type AvatarArraysType = Array<Avatar>;
+export type AvatarArrays = Array<Avatar>;
 
 export type User = {
   id: number,
@@ -29,7 +29,7 @@ export const UsersAPI = {
       (responce) => responce.data,
     );
   },
-  getUsersAvatar():Promise<AvatarArraysType> {
+  getUsersAvatar():Promise<AvatarArrays> {
     return instance.get(
       'photos/',
     ).then(

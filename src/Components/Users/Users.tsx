@@ -5,15 +5,15 @@ import UserSearch, { SearchValue } from './UsersSearch/UserSearch';
 import css from './Users.module.css';
 import preloader from '../../assets/preloader.svg';
 
-type UsersPropsType = {
+type UsersProps = {
   users: Array<User>
   setSearchValue: CallableFunction,
   avatars: Array<Avatar>,
   searchValue: SearchValue,
 }
-const Users:React.FC<UsersPropsType> = ({
+const Users:React.FC<UsersProps> = ({
   users, setSearchValue, avatars, searchValue,
-} :UsersPropsType) => {
+} :UsersProps) => {
   console.log(searchValue.value);
 
   return (

@@ -4,16 +4,16 @@ import css from './UserSearch.module.css';
 
 export type SearchValue = {value:string}
 
-type SearchPropsType = {
+type SearchProps = {
   setSearchValue: CallableFunction,
   searchValue: SearchValue,
 }
 
-const UserSearch:React.FC<SearchPropsType> = (
+const UserSearch:React.FC<SearchProps> = (
   {
     setSearchValue,
     searchValue,
-  }:SearchPropsType,
+  }:SearchProps,
 ) => {
   function changeInput(event:React.FormEvent<HTMLInputElement>) {
     setSearchValue(event.currentTarget.value);

@@ -2,20 +2,20 @@ import React from 'react';
 import css from './UsersListElement.module.css';
 import { Avatar } from '../../../../api/api';
 
-type UserListElementType = {
+type UserElement= {
   name:string,
   username: string,
   avatar: Avatar,
   setSearchValue: CallableFunction,
 }
 
-const UserListElement:React.FC<UserListElementType> = (
+const UserListElement:React.FC<UserElement> = (
   {
     name,
     username,
     avatar,
     setSearchValue,
-  }:UserListElementType,
+  }:UserElement,
 ) => {
   let avatarUrl = '';
   if (avatar) {
